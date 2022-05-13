@@ -132,18 +132,15 @@ impl<'a, T> EzMutIterator<'a> for T where T: MutIterator<'a> {}
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::collections::HashMap;
 
     #[test]
     fn it_works() {
         let v = vec![1, 2];
-        let h: HashMap<_, _> = v.into_map(|x| (x, x));
-        let v2: Vec<_> = h.map(|(k, v)| k + v);
-        let mut v3: Vec<_> = v2.map(|v| v + 1);
-        let v4: Vec<_> = v3.map_mut(|v| *v + 1);
-        let v5: Vec<_> = v3.filter(|v| true);
+        let h: BTreeMap<_, _> = v.into_map(|x| (x, x));
+        let mut v2: Vec<_> = h.map(|(k, v)| k + v);
+        let v3: Vec<_> = v2.map_mut(|v| *v + 1);
 
-        assert_eq!(h.get(&1), Some(&1));
-        assert_eq!(h.get(&2), Some(&2));
+        assert_eq!(v3.get(0), Some(&3));
+        assert_eq!(v3.get(1), Some(&5));
     }
 }

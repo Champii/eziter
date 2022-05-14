@@ -76,7 +76,7 @@ You also gain usage of all `into_*()` wrappers for every implementors of `IntoIt
 ## Example
 
 ```rust
-use exiter::*;
+use eziter::*;
 
 fn main() {
     let v = vec![1, 2, 3];
@@ -101,5 +101,5 @@ The rust's Iterators are the way to go in that case, obviously.
 In order for the implementation to hold, only the `into_*()` wrappers come really free of charge,
 the others produced iterators are wrapped around a `Box<dyn Iterator>`. If you don't mind the extra
 allocation/deallocation, you are fine.
-This might change in the future with when rust will allow to return `impl`s from trait implementation.
+This might change in the future when rust will allow to return `impl`s from trait implementation.
 

@@ -20,7 +20,7 @@ use eziter::*;
 This crate contains some conveniance wrappers around rust's iterators and std collections.
 
 Theses are essentially useful in the rare cases where you only want to use a single map or
-filter on your iterator without the syntacic burden of unrolling a full `x.iter().map(f).collect();`.
+filter on your iterator without the syntactic burden of unrolling a full `x.iter().map(f).collect();`.
 You can instead write a more appeiling `x.map(f);`
 
 Only a handful of methods are actually implemented, more might come in the future:
@@ -73,9 +73,22 @@ but note that the `*_mut()` variations are not available for
 
 You also gain usage of all `into_*()` wrappers for every implementors of `IntoIterator`
 
+## Example
+
+```rust
+use std::collections::HashMap;
+use exiter::*;
+
+fn main() {
+    let v = vec![1, 2, 3];
+
+    let _res: Vec<_> = v.map(|x| x + 3);
+}
+```
+
 ## Caveats
 
-Please note that theses wrappers doesn't come for free.
+Please note that theses wrappers don't come for free.
 
 ### No chainable calls
 

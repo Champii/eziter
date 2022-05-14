@@ -76,7 +76,6 @@ You also gain usage of all `into_*()` wrappers for every implementors of `IntoIt
 ## Example
 
 ```rust
-use std::collections::HashMap;
 use exiter::*;
 
 fn main() {

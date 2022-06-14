@@ -3,10 +3,10 @@ Iterators made easy
 
 ## Usage
 
-Drop this line into your `Cargo.toml`
+Add this line into your `Cargo.toml`
 
 ```toml
-eziter = { git = "https://github.com/Champii/eziter" }
+eziter = "0.1"
 ```
 
 and add a use statement at the top of every module using `EzIter`
